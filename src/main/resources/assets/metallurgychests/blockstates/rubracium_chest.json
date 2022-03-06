@@ -1,0 +1,29 @@
+{
+    "variants": 
+    {
+        "facing=up": 
+        { 
+            "model": "metallurgychests:rubracium_chest" 
+        },
+    
+        "facing=south": 
+        { 
+            "model": "metallurgychests:rubracium_chest" 
+        },
+    
+        "facing=east": 
+        { 
+            "model": "metallurgychests:rubracium_chest","y":270 
+        },
+    
+        "facing=west": 
+        { 
+            "model": "metallurgychests:rubracium_chest","y":90 
+        },
+    
+        "facing=north": 
+        { 
+            "model": "metallurgychests:rubracium_chest","y":180 
+        }
+    }
+}

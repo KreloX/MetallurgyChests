@@ -1,0 +1,26 @@
+
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "mmm",
+	"mbm",
+	"mcm"
+  ],
+  "key": {
+    "m": {
+      "type": "forge:ore_dict",
+	  "ore": "ingotPlatinum"
+    },
+    "b": {
+      "item": "metallurgy:bimetal_structure_block"
+    },
+    "c": {
+      "type": "forge:ore_dict",
+      "ore": "chestRubracium"
+    }
+  },
+  "result": {
+    "item": "metallurgychests:platinum_chest",
+    "type": "minecraft:item_nbt"
+  }
+}

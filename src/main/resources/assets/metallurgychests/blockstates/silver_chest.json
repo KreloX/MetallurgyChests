@@ -1,0 +1,29 @@
+{
+    "variants": 
+    {
+        "facing=up": 
+        { 
+            "model": "metallurgychests:silver_chest" 
+        },
+    
+        "facing=south": 
+        { 
+            "model": "metallurgychests:silver_chest" 
+        },
+    
+        "facing=east": 
+        { 
+            "model": "metallurgychests:silver_chest","y":270 
+        },
+    
+        "facing=west": 
+        { 
+            "model": "metallurgychests:silver_chest","y":90 
+        },
+    
+        "facing=north": 
+        { 
+            "model": "metallurgychests:silver_chest","y":180 
+        }
+    }
+}

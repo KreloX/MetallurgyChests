@@ -1,0 +1,14 @@
+tile.brass_chest.name=§6Brass Chest
+container.brass_chest=Brass Chest
+
+tile.silver_chest.name=§7Silver Chest
+container.silver_chest=Silver Chest
+
+tile.electrum_chest.name=§eElectrum Chest
+container.electrum_chest=Electrum Chest
+
+tile.rubracium_chest.name=§4Rubracium Chest
+container.rubracium_chest=Rubracium Chest
+
+tile.platinum_chest.name=§9Platinum Chest
+container.platinum_chest=Platinum Chest
