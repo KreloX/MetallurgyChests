@@ -24,7 +24,7 @@ public class ContainerPlatinumChest extends Container
 		{
 			for(int j = 0; j < 12; ++j) 
 			{
-				this.func_75146_a(new Slot(chestInventory, j + i*9, 8 + j*18, 20 + i*18));
+				this.func_75146_a(new Slot(chestInventory, j + i*12, 8 + j*18, 20 + i*18));
 			}
 		}
 		
