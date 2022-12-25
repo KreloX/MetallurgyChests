@@ -17,14 +17,14 @@ public class ContainerElectrumChest extends Container
 	public ContainerElectrumChest(InventoryPlayer playerInv, TileEntityElectrumChest chestInventory, EntityPlayer player) 
 	{
 		this.chestInventory = chestInventory;
-		this.numRows = chestInventory.func_70302_i_() / 9;
-		chestInventory.func_174889_b(player);
+		this.numRows = chestInventory.getSizeInventory() / 9;
+		chestInventory.openInventory(player);
 		
 		for(int i = 0; i < this.numRows; ++i) 
 		{
 			for(int j = 0; j < 9; ++j) 
 			{
-				this.func_75146_a(new Slot(chestInventory, j + i*9, 8 + j*18, 20 + i*18));
+				this.addSlotToContainer(new Slot(chestInventory, j + i*9, 8 + j*18, 20 + i*18));
 			}
 		}
 		
@@ -32,59 +32,59 @@ public class ContainerElectrumChest extends Container
 		{
 			for(int x = 0; x < 9; x++) 
 			{
-				this.func_75146_a(new Slot(playerInv, x + y*9 + 9, 8 + x*18, 196 + y*18));
+				this.addSlotToContainer(new Slot(playerInv, x + y*9 + 9, 8 + x*18, 196 + y*18));
 			}
 		}
 		
 		for(int x = 0; x < 9; x++) 
 		{
-			this.func_75146_a(new Slot(playerInv, x, 8 + x*18, 254));
+			this.addSlotToContainer(new Slot(playerInv, x, 8 + x*18, 254));
 		}
 	}
 	
 	@Override
-	public boolean func_75145_c(EntityPlayer playerIn) 
+	public boolean canInteractWith(EntityPlayer playerIn) 
 	{
-		return this.chestInventory.func_70300_a(playerIn);
+		return this.chestInventory.isUsableByPlayer(playerIn);
 	}
 	
 	@Override
-	public void func_75134_a(EntityPlayer playerIn) 
+	public void onContainerClosed(EntityPlayer playerIn) 
 	{
-		super.func_75134_a(playerIn);
-		chestInventory.func_174886_c(playerIn);
+		super.onContainerClosed(playerIn);
+		chestInventory.closeInventory(playerIn);
 	}
 	
 	@Override
-	public ItemStack func_82846_b(EntityPlayer playerIn, int index)
+	public ItemStack transferStackInSlot(EntityPlayer playerIn, int index)
 	{
-		ItemStack itemstack = ItemStack.field_190927_a;
-        Slot slot = this.field_75151_b.get(index);
+		ItemStack itemstack = ItemStack.EMPTY;
+        Slot slot = this.inventorySlots.get(index);
 
-        if (slot != null && slot.func_75216_d())
+        if (slot != null && slot.getHasStack())
         {
-            ItemStack itemstack1 = slot.func_75211_c();
-            itemstack = itemstack1.func_77946_l();
+            ItemStack itemstack1 = slot.getStack();
+            itemstack = itemstack1.copy();
 
             if (index < this.numRows * 9)
             {
-                if (!this.func_75135_a(itemstack1, this.numRows * 9, this.field_75151_b.size(), true))
+                if (!this.mergeItemStack(itemstack1, this.numRows * 9, this.inventorySlots.size(), true))
                 {
-                    return ItemStack.field_190927_a;
+                    return ItemStack.EMPTY;
                 }
             }
-            else if (!this.func_75135_a(itemstack1, 0, this.numRows * 9, false))
+            else if (!this.mergeItemStack(itemstack1, 0, this.numRows * 9, false))
             {
-                return ItemStack.field_190927_a;
+                return ItemStack.EMPTY;
             }
 
-            if (itemstack1.func_190926_b())
+            if (itemstack1.isEmpty())
             {
-                slot.func_75215_d(ItemStack.field_190927_a);
+                slot.putStack(ItemStack.EMPTY);
             }
             else
             {
-                slot.func_75218_e();
+                slot.onSlotChanged();
             }
         }
 
