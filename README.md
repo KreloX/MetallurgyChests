@@ -1,4 +1,5 @@
 # MetallurgyChests
-Addon mod for Metallurgy 4: Reforged adding metal chest variants
+![download counter](https://cf.way2muchnoise.eu/full_metallurgy-chests_downloads.svg) 
+![availability](https://cf.way2muchnoise.eu/versions/metallurgy-chests_all.svg)
 
-[Download on CurseForge](https://www.curseforge.com/minecraft/mc-mods/metallurgy-chests)
+Addon mod for Metallurgy 4: Reforged adding metal chest variants
