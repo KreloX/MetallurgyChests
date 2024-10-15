@@ -49,7 +49,6 @@ public class BlockBrassChest extends BlockContainer
 	public BlockBrassChest(String name) 
 	{
 		super(Material.IRON);
-		setUnlocalizedName(name);
 		setRegistryName(name);
 		setCreativeTab(MetallurgyTabs.tabSpecial);
 		setHardness(6.0f);
@@ -101,7 +100,7 @@ public class BlockBrassChest extends BlockContainer
 	@Override
     public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
-		return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing());
+		return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
     }
 
     
@@ -109,11 +108,6 @@ public class BlockBrassChest extends BlockContainer
 	@Override
     public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
     {
-        EnumFacing enumfacing = EnumFacing.getHorizontal(MathHelper.floor((double)(placer.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3).getOpposite();
-        state = state.withProperty(FACING, enumfacing);
-        
-        worldIn.setBlockState(pos, state);
-        
         if (stack.hasDisplayName())
         {
             TileEntity tileentity = worldIn.getTileEntity(pos);
@@ -239,7 +233,7 @@ public class BlockBrassChest extends BlockContainer
 
     public IBlockState getStateFromMeta(int meta)
     {
-        EnumFacing enumfacing = EnumFacing.getFront(meta);
+        EnumFacing enumfacing = EnumFacing.byIndex(meta);
 
         if (enumfacing.getAxis() == EnumFacing.Axis.Y)
         {
