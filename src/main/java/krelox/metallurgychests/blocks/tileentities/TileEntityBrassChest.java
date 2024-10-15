@@ -1,7 +1,7 @@
 package krelox.metallurgychests.blocks.tileentities;
 
+import krelox.metallurgychests.Tags;
 import krelox.metallurgychests.blocks.containers.ContainerBrassChest;
-import krelox.metallurgychests.util.Reference;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.SoundEvents;
@@ -81,7 +81,7 @@ public class TileEntityBrassChest extends TileEntityLockableLoot implements ITic
 	@Override
 	public String getGuiID() 
 	{
-		return Reference.MODID + ":brass_chest";
+		return Tags.MOD_ID + ":brass_chest";
 	}
 	
 	@Override

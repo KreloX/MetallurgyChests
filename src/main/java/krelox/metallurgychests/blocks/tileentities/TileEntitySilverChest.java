@@ -1,7 +1,7 @@
 package krelox.metallurgychests.blocks.tileentities;
 
+import krelox.metallurgychests.Tags;
 import krelox.metallurgychests.blocks.containers.ContainerSilverChest;
-import krelox.metallurgychests.util.Reference;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.SoundEvents;
@@ -81,7 +81,7 @@ public class TileEntitySilverChest extends TileEntityLockableLoot implements ITi
 	@Override
 	public String getGuiID() 
 	{
-		return Reference.MODID + ":silver_chest";
+		return Tags.MOD_ID + ":silver_chest";
 	}
 	
 	@Override

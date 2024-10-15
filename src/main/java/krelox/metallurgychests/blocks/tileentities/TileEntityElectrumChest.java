@@ -1,7 +1,7 @@
 package krelox.metallurgychests.blocks.tileentities;
 
+import krelox.metallurgychests.Tags;
 import krelox.metallurgychests.blocks.containers.ContainerElectrumChest;
-import krelox.metallurgychests.util.Reference;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.SoundEvents;
@@ -81,7 +81,7 @@ public class TileEntityElectrumChest extends TileEntityLockableLoot implements I
 	@Override
 	public String getGuiID() 
 	{
-		return Reference.MODID + ":electrum_chest";
+		return Tags.MOD_ID + ":electrum_chest";
 	}
 	
 	@Override

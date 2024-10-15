@@ -1,9 +1,9 @@
 package krelox.metallurgychests.blocks.gui;
 
 import it.hurts.metallurgy_reforged.material.ModMetals;
+import krelox.metallurgychests.Tags;
 import krelox.metallurgychests.blocks.containers.ContainerBrassChest;
 import krelox.metallurgychests.blocks.tileentities.TileEntityBrassChest;
-import krelox.metallurgychests.util.Reference;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,7 +12,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class GuiBrassChest extends GuiContainer
 {
-	private static final ResourceLocation GUI_CHEST = new ResourceLocation(Reference.MODID + ":textures/gui/brass_chest.png");
+	private static final ResourceLocation GUI_CHEST = new ResourceLocation(Tags.MOD_ID, "textures/gui/brass_chest.png");
 	private final TileEntityBrassChest te;
 	
 	public GuiBrassChest(InventoryPlayer playerInventory, TileEntityBrassChest chestInventory, EntityPlayer player) 

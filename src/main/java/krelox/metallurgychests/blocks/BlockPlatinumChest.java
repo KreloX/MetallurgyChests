@@ -1,14 +1,11 @@
 package krelox.metallurgychests.blocks;
 
-import javax.annotation.Nullable;
-
 import it.hurts.metallurgy_reforged.util.MetallurgyTabs;
 import krelox.metallurgychests.MetallurgyChests;
 import krelox.metallurgychests.blocks.tileentities.TileEntityPlatinumChest;
 import krelox.metallurgychests.init.BlockInit;
 import krelox.metallurgychests.init.ItemInit;
 import krelox.metallurgychests.util.Reference;
-
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.SoundType;
@@ -41,6 +38,8 @@ import net.minecraft.world.ILockableContainer;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nullable;
 
 public class BlockPlatinumChest extends BlockContainer
 {
