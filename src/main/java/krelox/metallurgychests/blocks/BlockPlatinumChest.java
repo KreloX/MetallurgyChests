@@ -1,14 +1,11 @@
 package krelox.metallurgychests.blocks;
 
-import javax.annotation.Nullable;
-
 import it.hurts.metallurgy_reforged.util.MetallurgyTabs;
 import krelox.metallurgychests.MetallurgyChests;
 import krelox.metallurgychests.blocks.tileentities.TileEntityPlatinumChest;
 import krelox.metallurgychests.init.BlockInit;
 import krelox.metallurgychests.init.ItemInit;
 import krelox.metallurgychests.util.Reference;
-
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.SoundType;
@@ -42,6 +39,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
+
 public class BlockPlatinumChest extends BlockContainer
 {
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
@@ -49,7 +48,6 @@ public class BlockPlatinumChest extends BlockContainer
 	public BlockPlatinumChest(String name) 
 	{
 		super(Material.IRON);
-		setUnlocalizedName(name);
 		setRegistryName(name);
 		setCreativeTab(MetallurgyTabs.tabSpecial);
 		setHardness(6.0f);
@@ -101,7 +99,7 @@ public class BlockPlatinumChest extends BlockContainer
 	@Override
     public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
-		return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing());
+		return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
     }
 
     
@@ -109,11 +107,6 @@ public class BlockPlatinumChest extends BlockContainer
 	@Override
     public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
     {
-        EnumFacing enumfacing = EnumFacing.getHorizontal(MathHelper.floor((double)(placer.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3).getOpposite();
-        state = state.withProperty(FACING, enumfacing);
-        
-        worldIn.setBlockState(pos, state);
-        
         if (stack.hasDisplayName())
         {
             TileEntity tileentity = worldIn.getTileEntity(pos);
@@ -239,7 +232,7 @@ public class BlockPlatinumChest extends BlockContainer
 
     public IBlockState getStateFromMeta(int meta)
     {
-        EnumFacing enumfacing = EnumFacing.getFront(meta);
+        EnumFacing enumfacing = EnumFacing.byIndex(meta);
 
         if (enumfacing.getAxis() == EnumFacing.Axis.Y)
         {

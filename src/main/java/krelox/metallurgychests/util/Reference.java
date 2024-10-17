@@ -2,13 +2,10 @@ package krelox.metallurgychests.util;
 
 public class Reference 
 {
-	public static final String MODID = "metallurgychests";
-	public static final String NAME = "Metallurgy Chests";
-	public static final String VERSION = "1.1.2";
 	public static final String DEPENDENCIES = "required-after:metallurgy";
 
 	public static final String CLIENT = "krelox.metallurgychests.util.ClientProxy";
-	public static final String SERVER = "krelox.metallurgychests.util.CommonProxy";
+	public static final String SERVER = "krelox.metallurgychests.util.ServerProxy";
 
 	public static final int GUI_BRASS_CHEST = 3;
 	public static final int GUI_SILVER_CHEST = 4;

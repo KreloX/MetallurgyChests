@@ -1,8 +1,7 @@
 package krelox.metallurgychests.util;
 
-import net.minecraft.item.Item;
-
-public class CommonProxy 
+public abstract class CommonProxy
 {
-	public void registerItemRenderer(Item item, int meta, String id) {}
+	public abstract void registerModels();
+	public abstract void registerTESRs();
 }

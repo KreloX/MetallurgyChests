@@ -1,8 +1,8 @@
 package krelox.metallurgychests.blocks.animations;
 
+import krelox.metallurgychests.Tags;
 import krelox.metallurgychests.blocks.BlockSilverChest;
 import krelox.metallurgychests.blocks.tileentities.TileEntitySilverChest;
-import krelox.metallurgychests.util.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -13,7 +13,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderSilverChest extends TileEntitySpecialRenderer<TileEntitySilverChest>
 {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(Reference.MODID + ":textures/blocks/silver_chest.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(Tags.MOD_ID, "textures/blocks/silver_chest.png");
     private final ModelSilverChest MODEL = new ModelSilverChest();
     
     @Override

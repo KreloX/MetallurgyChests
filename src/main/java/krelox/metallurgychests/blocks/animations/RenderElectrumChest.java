@@ -1,8 +1,8 @@
 package krelox.metallurgychests.blocks.animations;
 
+import krelox.metallurgychests.Tags;
 import krelox.metallurgychests.blocks.BlockElectrumChest;
 import krelox.metallurgychests.blocks.tileentities.TileEntityElectrumChest;
-import krelox.metallurgychests.util.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -13,7 +13,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderElectrumChest extends TileEntitySpecialRenderer<TileEntityElectrumChest>
 {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(Reference.MODID + ":textures/blocks/electrum_chest.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(Tags.MOD_ID, "textures/blocks/electrum_chest.png");
     private final ModelElectrumChest MODEL = new ModelElectrumChest();
     
     @Override

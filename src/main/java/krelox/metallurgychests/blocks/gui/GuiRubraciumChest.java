@@ -1,9 +1,9 @@
 package krelox.metallurgychests.blocks.gui;
 
 import it.hurts.metallurgy_reforged.material.ModMetals;
+import krelox.metallurgychests.Tags;
 import krelox.metallurgychests.blocks.containers.ContainerRubraciumChest;
 import krelox.metallurgychests.blocks.tileentities.TileEntityRubraciumChest;
-import krelox.metallurgychests.util.Reference;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,7 +12,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class GuiRubraciumChest extends GuiContainer
 {
-	private static final ResourceLocation GUI_CHEST = new ResourceLocation(Reference.MODID + ":textures/gui/rubracium_chest.png");
+	private static final ResourceLocation GUI_CHEST = new ResourceLocation(Tags.MOD_ID, "textures/gui/rubracium_chest.png");
 	private final TileEntityRubraciumChest te;
 	
 	public GuiRubraciumChest(InventoryPlayer playerInventory, TileEntityRubraciumChest chestInventory, EntityPlayer player) 

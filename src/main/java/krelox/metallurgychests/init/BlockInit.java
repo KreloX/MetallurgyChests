@@ -1,14 +1,14 @@
 package krelox.metallurgychests.init;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import krelox.metallurgychests.blocks.BlockBrassChest;
 import krelox.metallurgychests.blocks.BlockElectrumChest;
 import krelox.metallurgychests.blocks.BlockPlatinumChest;
 import krelox.metallurgychests.blocks.BlockRubraciumChest;
 import krelox.metallurgychests.blocks.BlockSilverChest;
 import net.minecraft.block.Block;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BlockInit 
 {
