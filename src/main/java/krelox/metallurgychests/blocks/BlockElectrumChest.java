@@ -48,6 +48,7 @@ public class BlockElectrumChest extends BlockContainer
 	public BlockElectrumChest(String name) 
 	{
 		super(Material.IRON);
+		setTranslationKey(name);
 		setRegistryName(name);
 		setCreativeTab(MetallurgyTabs.tabSpecial);
 		setHardness(6.0f);

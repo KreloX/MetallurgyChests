@@ -48,6 +48,7 @@ public class BlockPlatinumChest extends BlockContainer
 	public BlockPlatinumChest(String name) 
 	{
 		super(Material.IRON);
+		setTranslationKey(name);
 		setRegistryName(name);
 		setCreativeTab(MetallurgyTabs.tabSpecial);
 		setHardness(6.0f);

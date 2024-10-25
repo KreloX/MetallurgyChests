@@ -48,6 +48,7 @@ public class BlockRubraciumChest extends BlockContainer
 	public BlockRubraciumChest(String name) 
 	{
 		super(Material.IRON);
+		setTranslationKey(name);
 		setRegistryName(name);
 		setCreativeTab(MetallurgyTabs.tabSpecial);
 		setHardness(6.0f);
